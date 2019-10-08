@@ -1,0 +1,201 @@
+author = "POP LIFE";
+onLoadName = "POP LIFE Lakeside RPG";
+onLoadMission = "Servidor de Rol";
+loadScreen = "\pop_iconos\textures\logo.paa";
+joinUnassigned = 1;
+respawn = BASE;
+respawndelay = 5;
+disabledAI = 1;
+disableChannels[]={0,1,2};
+enableDebugConsole = 1;
+respawnDialog = 0;
+respawnButton = 0;
+
+class Header
+{
+	gameType = RPG;
+	minPlayers = 1;
+	maxPlayers = 80;
+};
+
+#include "dialog\MasterHandler.h"
+
+class RscTitles
+{
+	#include "dialog\progress.hpp"
+	#include "dialog\a3ljailhud.hpp"
+	#include "dialog\badgeDialogV2.h"
+	#include "dialog\DNI_dialog.h"
+	#include "dialog\EMSDNI_dialog.h"
+
+	#include "dialog\roboDeDatos.hpp"
+	#include "dialog\masuno.hpp"
+	#include "dialog\barrita.hpp"
+	#include "dialog\anuncio.hpp"
+
+	#include "dialog\HUDica.hpp"
+	#include "dialog\sangrado.hpp"
+};
+
+class CfgFunctions
+{
+	#include "Functions.h"
+	// #include "ica\funcionesica.h" // esto es para MP
+	#include "life_server\ica\funcionesica2.h" // esto es para local
+
+	#include "rosen\immersion\vip_cmn\fn\vip_cmn_fnc.hpp"
+	#include "rosen\immersion\vip_lit\fn\vip_lit_fnc.hpp"
+
+};
+
+class CfgSounds
+{
+	#include "rosen\immersion\vip_lit\resource\vip_lit_cfgSounds.hpp"
+	sounds[] = {};
+	
+	class purge
+    {
+        name = "purge";
+        sound[] = {"\sounds\la_purga.ogg",1.0,1.0};
+        titles[] = {};
+    };
+};
+
+class CfgDebriefing
+{
+	class NotWhitelisted
+	{
+		title = "Mission Failed";
+		subtitle = "You are not white-listed to use this slot";
+		description = "You are not allowed to use this slot because you do not have the appropriate permissions, try another slot.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+
+	class Blacklisted
+	{
+		title = "Mission Failed";
+		subtitle = "You are blacklisted from cops";
+		description = "You are not allowed to be a cop due to previous actions and the admins have removed you from being a cop.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+
+	class errorica
+	{
+		title = "Estabas bugeado";
+		subtitle = "y tienes que reiniciar la misión";
+		description = "Contacta con un admin";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+
+};
+
+class CfgNotifications
+{
+	class MedicalRequestEmerg
+	{
+		title = "EMS Requested";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		duration = 5;
+		priority = 7;
+	};
+
+	class DeliveryAssigned
+	{
+		title = "Delivery Job Accepted";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		duration = 10;
+		priority = 7;
+	};
+
+	class DeliveryFailed
+	{
+		title = "Delivery Job Failed";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskiconfailed_ca.paa";
+		description = "%1";
+		duration = 7;
+		priority = 7;
+	};
+
+	class DeliverySucceeded
+	{
+		title = "Delivery Job Completed";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcondone_ca.paa";
+		description = "%1";
+		duration = 6;
+		priority = 6;
+	};
+
+	class TextMessage
+	{
+		title = "Received A Text Message";
+		iconPicture = "\pop_iconos\icons\messagenew.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+
+	class PoliceDispatch
+	{
+		title = "911 Dispatch Center";
+		iconPicture = "\pop_iconos\icons\messagepolice.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+
+	class AdminDispatch
+	{
+		title = "Admin Dispatch Center";
+		iconPicture = "\pop_iconos\icons\messageadmin.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+
+	class AdminMessage
+	{
+		title = "Admin Message";
+		iconPicture = "\pop_iconos\icons\messageadmin.paa";
+		description = "%1";
+		duration = 10;
+		priority = 5;
+	};
+
+		class opcMessage
+	{
+		title = "Mensaje de Evento";
+		iconPicture = "\pop_iconos\icons\messagenew.paa";
+		description = "%1";
+		duration = 10;
+		priority = 5;
+	};
+
+
+	class EMP_Hit
+	{
+		title = "EMP";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskiconfailed_ca.paa";
+		description = "%1";
+		duration = 7;
+		priority = 7;
+	};
+	class Regalo
+	{
+		title = "%1"; // fondo negro
+		iconPicture = "\A3\ui_f\data\map\Vehicle\icons\pictureparachute_ca.paa";
+		iconText = ""; // Short text displayed over the icon. Colored by "color", filled by arguments.
+		description = "%2"; // Brief description displayed as structured text. Colored by "color", filled by arguments.
+		color[] = {1,0.6,0,0.9}; // color del icono y del texto
+		duration = 5;
+		priority = 3;
+		difficulty[] = {"netStats"};
+	};
+};

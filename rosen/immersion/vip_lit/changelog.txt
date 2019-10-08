@@ -1,0 +1,40 @@
+2015/03/12 - v1.0 Public Release
+====================
+
+
+2015/03/14 - v1.1
+====================
+
+-changed: added option for red flashlight
+-changed: added option for larger flashlight size
+-fixed: flashlight would not work on VR map (BIS did not define "mapSize" in VR's config)
+
+
+2015/03/19 - v1.2
+====================
+
+-changed: chemlights illuminate map
+-changed: tweaked moon brightness
+-fixed: flashlight now supports non-round ui scales (no more black/white lines)
+
+
+2015/03/24 - v1.21
+====================
+
+-fixed: added support for SMD Sahrani, Takistan, Chernarus, Utes (A3MapPack versions)
+-changed: removing map cursor grid is now optional
+-changed: NVG can be used on map (optional)
+-changed: flashlight key is F, map NVG key is N, regardless of player's bindings
+
+
+2015/04/04 - v1.3
+====================
+
+-fixed: issue where map light position was not updating
+-changed: added alternate map cursor (optional)
+-changed: added option to disable looking down most optics with NVG on
+-changed: map light requires "acc_flashlight" to be in player's inventory or on weapon
+-changed: map light and map NVG key can be rebound in notes; once rebound, they're saved in profile for future sessions
+-changed: map light now affected by streetlamps, headlights, flashlights, pitfires, water depth
+-changed: rain drops make noise on map
+-changed: reorganised init scripts
